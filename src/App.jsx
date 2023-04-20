@@ -3,8 +3,8 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Menu from "./components/menu";
-import Home from "./components/home";
+import Menu from "./components/Menu/menu";
+import Home from "./components/Home/home";
 import Personajes from "./components/personajes";
 import Episodios from "./components/episodios";
 import Citas from "./components/citas";

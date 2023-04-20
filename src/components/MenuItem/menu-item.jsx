@@ -1,6 +1,8 @@
+import "./menu-item.css"
+
 function MenuItem(props) {
   return (
-    <li>
+    <li className="menu-item">
       <a href= {props.link}>
       {props.text}
       </a>

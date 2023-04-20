@@ -1,9 +1,10 @@
-import MenuItem from "./menu-item";
+import MenuItem from "../MenuItem/menu-item";
+import "./menu.css";
 
 function Menu() {
-    return (<header>
+    return (<header className="menu-wrapper">
         <nav>
-         <ul>
+         <ul className="menu">
            <MenuItem 
            text='Home'
            link="/"
