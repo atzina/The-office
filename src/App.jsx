@@ -7,7 +7,7 @@ import Menu from "./components/Menu/menu";
 import Home from "./components/Home/home";
 import Personajes from "./components/personajes";
 import Episodios from "./components/episodios";
-import Citas from "./components/citas";
+import Planets from "./components/planets";
 
 function App() {
   function renderContent(){
@@ -17,12 +17,17 @@ function App() {
   return (
     <div className="App">
       <Menu/>
+      <main>
       <Routes>
         <Route path="/" element= {<Home/>} exact />
         <Route path="/personajes" element ={<Personajes/>} exact />
         <Route path="/episodios" element ={<Episodios/>} exact/>
-        <Route path= "/citas" element = {<Citas/>} exact/>
+        <Route path= "/planets" element = {<Planets/>} exact/>
       </Routes>
+      </main>
+      <footer>
+        Hecho como practica de React
+      </footer>
     </div>
   )
 }

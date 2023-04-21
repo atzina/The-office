@@ -18,8 +18,8 @@ function Menu() {
            link="/episodios"
            />
            <MenuItem 
-           text='Citas'
-           link="/citas"
+           text='Planetas'
+           link="/planets"
            />
          </ul>
         </nav>
