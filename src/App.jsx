@@ -26,7 +26,7 @@ function App() {
       </Routes>
       </main>
       <footer>
-        Hecho como practica de React
+        Hecho como práctica de React
       </footer>
     </div>
   )

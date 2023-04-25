@@ -1,7 +1,7 @@
 :root {
     --menu-border-color: #4895EF;
-    --background-color: #ffffeb;
-    --text-color: black;
+    --background-color: black;
+    --text-color: #ffffeb;
     --active: #d62828;
     --menu-text-color: #F72585;
     --menu-text-hover-color: #4CC9F0;
@@ -33,7 +33,7 @@ body, html, #root {
     font-family: 'Inter', sans-serif;
 }
 
-main {
-    flex: 1;
-    padding: 14px;
+main{
+    display: flex;
 }
+
