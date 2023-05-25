@@ -1,6 +1,4 @@
-body{
-    background-color: black;
-}
+
 .poster{
     margin-top: 30px;
     width: 60%;
@@ -12,6 +10,7 @@ body{
     align-items: center;
 }
 h1 {
+    color: aliceblue;
     font-size: 1 em;
     line-height: 1.1;
   }

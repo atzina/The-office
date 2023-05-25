@@ -1,14 +1,23 @@
-.menu-item {
+.navbar{
     padding: 10px;
+    color: aqua;
+}
+header{
+    height: 120px;
 }
 
-.menu-item a {
-    color: var(--menu-text-color);
+/* .nav-item a {
+    color: blue;
     font-weight: 600;
     font-size: 18px;
-    transition: all .1s ease-in;
-}
+} */
 
 .menu-item a:hover {
     color: var(--menu-text-hover-color);
+}
+
+@media (min-width:768px){
+   .navbar-expand-md .navbar-collapse {
+    justify-content: flex-end;
+   }
 }

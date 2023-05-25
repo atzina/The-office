@@ -1,3 +1,5 @@
+@import "bootstrap/scss/bootstrap";
+
 :root {
     --menu-border-color: #4895EF;
     --background-color: black;

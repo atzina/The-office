@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./personajes.css"
 
 function Personajes () {
 
@@ -19,14 +20,16 @@ function Personajes () {
    
 
     return (
-    <div>
+    <div className="personajesTodos">
         {personajes && personajes.map((personaje)=>(
-            <div key={personaje.name}>
-                <h2>{personaje.name}</h2>
-                <p>Género: {personaje.gender}</p>
-                <p>Año de nacimiento: {personaje.birth_year}</p>
-                <p>Films: {personaje.films}</p>
-                <p>Home World: {personaje.homeworld}</p>
+            <div class="card border-secondary" key={personaje.name} >
+                <div class="card-body">
+                    <h4 class="card-title">{personaje.name}</h4>
+                    <p class="card-text">Género: {personaje.gender}</p>
+                    <p class="card-text">Año de nacimiento: {personaje.birth_year}</p>
+                    <p class="card-text">Films: {personaje.films}</p>
+                    <p class="card-text">Home World: {personaje.homeworld}</p>
+                </div>
             </div>
         ))}
     </div>
