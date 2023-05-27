@@ -20,9 +20,10 @@ function Personajes () {
    
 
     return (
-    <div className="personajesTodos">
+    <div className="personajesTodos row">
+        <h1 class="titleP text-center">PERSONAJES</h1>
         {personajes && personajes.map((personaje)=>(
-            <div class="card border-secondary" key={personaje.name} >
+            <div class=" cards card border-dark mb-3 col-12 col-md-6 col-lg-3" key={personaje.name} >
                 <div class="card-body">
                     <h4 class="card-title">{personaje.name}</h4>
                     <p class="card-text">Género: {personaje.gender}</p>
