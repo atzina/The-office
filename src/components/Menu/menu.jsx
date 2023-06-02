@@ -16,12 +16,12 @@ function Menu() {
         text='Home'
            link="/"/>
         <MenuItem 
-           text='Personajes'
-           link="/Personajes"
-           />
-        <MenuItem 
            text='Films'
            link="/films"
+           />
+          <MenuItem 
+           text='Personajes'
+           link="/Personajes"
            />
         <MenuItem 
            text='Planetas'

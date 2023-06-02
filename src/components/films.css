@@ -1,0 +1,15 @@
+.filmsTodos {
+    margin:77px;
+    gap:20px;
+    justify-content: center;
+ }
+ .cards {
+     padding: 15px;
+     border: 2px solid #8080804d;
+     transition: all 0.2s ease-in;
+     border-radius: 10px;
+ }
+ .cards:hover {
+     color: white;
+     background-color: #1b1b32;
+ }

@@ -3,7 +3,10 @@ import "./personajes.css"
 
 function Personajes () {
 
-    const [personajes, setPersonajes] = useState([]);
+    // personajes es la variable que contiene el valor
+    const [personajes, setPersonajes] = useState([]); // el parametro es el valor inicial
+    // setPersonajes requiere el nuevo valor del estado y este modifica el valor de la variable que anteriormente mencionamos
+    // aquí personajes se inicializa en un array vacío y se renderiza cada vez que el valor es modificado por la función setPersonajes, cuando trae los resultados de la petición
 
     const getPersonajes = async () => {
 
@@ -15,8 +18,11 @@ function Personajes () {
     }
 
     useEffect(()=>{
+        // como mínimo se va a ejecutar una vez (getPersonajes)
         getPersonajes();
     }, []);
+    // las dependencias dicen que dada vez que cambie ese valor, se ejecutará el código anterior
+    // ([]), en este caso se va a ejectutar solo cuando se renderiza por primera vez el componente por que el array está vacío
    
 
     return (
