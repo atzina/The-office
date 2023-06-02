@@ -20,8 +20,8 @@ function Menu() {
            link="/Personajes"
            />
         <MenuItem 
-           text='Episodios'
-           link="/episodios"
+           text='Films'
+           link="/films"
            />
         <MenuItem 
            text='Planetas'

@@ -6,9 +6,9 @@ import {
 import Menu from "./components/Menu/menu";
 import Home from "./components/Home/home";
 import Personajes from "./components/personajes";
-import Episodios from "./components/episodios";
 import Planets from "./components/planets";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Films from './components/films';
 
 function App() {
   function renderContent(){
@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element= {<Home/>} exact />
         <Route path="/personajes" element ={<Personajes/>} exact />
-        <Route path="/episodios" element ={<Episodios/>} exact/>
+        <Route path="/films" element ={<Films/>} exact/>
         <Route path= "/planets" element = {<Planets/>} exact/>
       </Routes>
       </main>
