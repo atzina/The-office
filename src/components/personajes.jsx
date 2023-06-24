@@ -5,24 +5,36 @@ function Personajes () {
 
     // personajes es la variable que contiene el valor
     const [personajes, setPersonajes] = useState([]); // el parametro es el valor inicial
+    const [nextPage, setNextPage] = useState(null);
     // setPersonajes requiere el nuevo valor del estado y este modifica el valor de la variable que anteriormente mencionamos
     // aquí personajes se inicializa en un array vacío y se renderiza cada vez que el valor es modificado por la función setPersonajes, cuando trae los resultados de la petición
 
-    const getPersonajes = async () => {
+    const getPersonajes = async (url) => {
 
-        const resp = await fetch('https://swapi.dev/api/people/');
+        const resp = await fetch(url);
         const json = await resp.json();
+
         console.log(json.results);
-        setPersonajes(json.results);
+
+        setPersonajes((prevPersonajes) => [...prevPersonajes, ...json.results]);
+        setNextPage(json.next); // Almacenamos la URL de la página siguiente en el estado
+
         console.log(personajes);
+
     }
 
     useEffect(()=>{
         // como mínimo se va a ejecutar una vez (getPersonajes)
-        getPersonajes();
+        getPersonajes('https://swapi.dev/api/people/');
     }, []);
     // las dependencias dicen que dada vez que cambie ese valor, se ejecutará el código anterior
     // ([]), en este caso se va a ejectutar solo cuando se renderiza por primera vez el componente por que el array está vacío
+
+    useEffect(() => {
+        if (nextPage) {
+          getPersonajes(nextPage); // Llamamos a la función getPersonajes con la URL de la página siguiente
+        }
+      }, [nextPage]);
    
 
     return (
