@@ -4,18 +4,32 @@ import "./planets.css"
 function Planets () {
 
     const [planets, setPlanets] = useState([]);
+    const [nextPage, setNextPage] = useState(null);
 
-    const getQuotes = async () => {
+    const getQuotes = async (url) => {
        
-        const resp = await fetch('https://swapi.dev/api/planets/');
+        const resp = await fetch(url);
         const json = await resp.json();
+
         console.log(json.results);
-        setPlanets(json.results);
+
+        setPlanets((prevPlanets) => [...prevPlanets, ...json.results]);
+        //setPlanets(json.results);
+        setNextPage(json.next);
+
         console.log(planets);
+        //'https://swapi.dev/api/planets/'
     }
     useEffect(()=>{
-        getQuotes();
+        getQuotes('https://swapi.dev/api/planets/');
     }, []);
+
+    useEffect(() => {
+        if (nextPage) {
+          getQuotes(nextPage); // Llamamos a la función getPersonajes con la URL de la página siguiente
+        }
+      }, [nextPage]);
+
 
     return (
     <div className="planetasTodos row">

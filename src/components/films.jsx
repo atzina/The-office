@@ -5,18 +5,31 @@ import "./films.css"
 function Films () {
 
     const [films, setfilms] = useState([]);
+    const [nextPage, setNextPage] = useState(null);
 
-    const getFilms = async () => {
-        const resp = await fetch('https://swapi.dev/api/films/');
+    const getFilms = async (url) => {
+
+        const resp = await fetch(url);
         const json = await resp.json();
+
         console.log(json.results);
-        setfilms(json.results);
+
+        setfilms((prevFilms) => [...prevFilms, ...json.results]);
+        setNextPage(json.next);
+        //setfilms(json.results);
+        // https://swapi.dev/api/films/
         
     }
 
     useEffect(()=>{
-        getFilms();
+        getFilms('https://swapi.dev/api/films/');
     }, []);
+
+    useEffect(() => {
+        if (nextPage) {
+          getFilms(nextPage); // Llamamos a la función getPersonajes con la URL de la página siguiente
+        }
+      }, [nextPage]);
 
 
 
